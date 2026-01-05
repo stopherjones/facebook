@@ -4,12 +4,31 @@
   grid-template-columns: 1fr; /* default: 1 column */
 }
 
+.feeds {
+  scroll-snap-type: y mandatory;
+}
+
+.feed {
+  scroll-snap-align: start;
+  height: 90vh; /* nearly full screen */
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.feed iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
 .feeds .fb-page {
   padding: 0.5rem;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+
 
 .fb-page {
   width: 100% !important;
