@@ -1,0 +1,27 @@
+.feeds {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr; /* default: 1 column */
+}
+
+.feeds .fb-page {
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* 2 columns on tablets / medium screens */
+@media (min-width: 600px) {
+  .feeds {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3 columns on desktops / wide screens */
+@media (min-width: 1000px) {
+  .feeds {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
