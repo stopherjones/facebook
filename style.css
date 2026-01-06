@@ -21,7 +21,7 @@ body {
   position: fixed;      /* stays in place while scrolling */
   top: 0;
   left: 0;
-  width: 60px;          /* narrow vertical bar */
+  width: 50px;          /* narrow vertical bar */
   height: 100vh;        /* full viewport height */
   background: #f7f7f7;
   border-right: 1px solid #ddd;
@@ -108,8 +108,8 @@ body {
 /* Force FB plugin + iframe to always fit container */
 .fb-page,
 .fb-page iframe {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 90% !important;
+  max-width: 90% !important;
 }
 
 .feed iframe {
