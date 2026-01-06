@@ -67,7 +67,7 @@ body {
 
 .feeds {
   margin-left: 80px;        /* space for sidebar */
-  padding: 1rem;
+  padding: 0.25rem;
   width: calc(100% - 80px); /* fill remaining width */
   display: grid;            /* responsive grid layout */
   gap: 2rem;
