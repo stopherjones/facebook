@@ -1,101 +1,98 @@
-/* Layout */
+/* --------------------------------------------------
+   GLOBAL LAYOUT
+   -------------------------------------------------- */
+
+/* Remove default margins, set base font, and allow
+   the sidebar + content to sit horizontally */
 body {
   margin: 0;
   font-family: sans-serif;
   display: flex;
+  overflow-x: hidden; /* prevent sideways scrolling */
+  background-color: bisque;
 }
 
-/* Fixed left nav */
+
+/* --------------------------------------------------
+   FIXED LEFT SIDEBAR NAVIGATION
+   -------------------------------------------------- */
+
 .side-nav {
-  position: fixed;
+  position: fixed;      /* stays in place while scrolling */
   top: 0;
   left: 0;
-  width: 60px;
-  height: 100vh;
+  width: 60px;          /* narrow vertical bar */
+  height: 100vh;        /* full viewport height */
   background: #f7f7f7;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
-  gap: 1rem;
-  z-index: 1000;
+  gap: 1rem;            /* spacing between icons */
+  z-index: 1000;        /* sits above page content */
 }
 
-/* Nav buttons */
+/* Each nav button container */
 .nav-item {
   width: 40px;
   height: 40px;
   background: white;
-  border-radius: 50%;
+  border-radius: 50%;       /* circular button */
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 1.4rem;
   border: 1px solid #ccc;
   transition: background 0.2s;
 }
 
+/* The actual icon image */
 .nav-item img {
   width: 40px;
   height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: cover;        /* crop nicely */
+  border-radius: 50%;       /* circular image */
   display: block;
 }
 
-
 .nav-item:hover {
-  background: #eee;
+  background: #eee;         /* subtle hover effect */
 }
 
-/* Main content area */
+
+/* --------------------------------------------------
+   MAIN CONTENT AREA
+   -------------------------------------------------- */
+
 .feeds {
-  margin-left: 80px; /* space for the sidebar */
+  margin-left: 80px;        /* space for sidebar */
   padding: 1rem;
-  width: calc(100% - 80px);
-  scroll-behavior: smooth;
+  width: calc(100% - 80px); /* fill remaining width */
+  display: grid;            /* responsive grid layout */
+  gap: 2rem;
+  grid-template-columns: 1fr; /* 1 column by default */
+  scroll-behavior: smooth;  /* smooth jump-to-section */
+  scroll-snap-type: y mandatory; /* snap scrolling */
 }
 
-/* Feed sections */
+
+/* --------------------------------------------------
+   INDIVIDUAL FEED SECTIONS
+   -------------------------------------------------- */
+
 .feed {
-  margin-bottom: 3rem;
+  scroll-snap-align: start; /* snap to top when scrolling */
+  height: 90vh;             /* nearly full-screen panels */
+  overflow: hidden;         /* hide overflow from FB iframe */
+  margin-bottom: 2rem;
 }
 
 .feed h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Make FB embeds responsive */
-.fb-page,
-.fb-page iframe {
-  width: 100% !important;
-}
-
-.feeds {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr; /* default: 1 column */
-}
-
-.feeds {
-  scroll-snap-type: y mandatory;
-}
-
-.feed {
-  scroll-snap-align: start;
-  height: 90vh; /* nearly full screen */
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-
-.feed iframe {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-
+/* Card styling around each FB embed */
 .feeds .fb-page {
   padding: 0.5rem;
   background: #fff;
@@ -104,25 +101,44 @@ body {
 }
 
 
+/* --------------------------------------------------
+   FACEBOOK EMBED RESPONSIVENESS
+   -------------------------------------------------- */
 
-.fb-page {
-  width: 100% !important;
-}
+/* Force FB plugin + iframe to always fit container */
+.fb-page,
 .fb-page iframe {
   width: 100% !important;
+  max-width: 100% !important;
+}
+
+.feed iframe {
+  height: 100% !important; /* fill the feed panel vertically */
 }
 
 
-/* 2 columns on tablets / medium screens */
+/* --------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   -------------------------------------------------- */
+
+/* 2 columns on tablets */
 @media (min-width: 600px) {
   .feeds {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 3 columns on desktops / wide screens */
+/* 3 columns on desktops */
 @media (min-width: 1000px) {
   .feeds {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .feeds {
+    margin-left: 60px; /* tighter against sidebar */
+    padding-right: 1rem;
   }
 }
