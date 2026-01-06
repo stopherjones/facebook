@@ -86,7 +86,10 @@ body {
   height: 90vh;             /* nearly full-screen panels */
   overflow: hidden;         /* hide overflow from FB iframe */
   margin-bottom: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 .feed h2 {
   margin-bottom: 0.5rem;
@@ -94,7 +97,7 @@ body {
 
 /* Card styling around each FB embed */
 .feeds .fb-page {
-  padding: 0.5rem;
+  padding: 0.25rem;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -108,8 +111,14 @@ body {
 /* Force FB plugin + iframe to always fit container */
 .fb-page,
 .fb-page iframe {
-  width: 90% !important;
-  max-width: 90% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.fb-page {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-left: -2px;
 }
 
 .feed iframe {
