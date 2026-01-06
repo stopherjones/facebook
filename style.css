@@ -21,7 +21,7 @@ body {
   position: fixed;      /* stays in place while scrolling */
   top: 0;
   left: 0;
-  width: 50px;          /* narrow vertical bar */
+  width: 60px;          /* narrow vertical bar */
   height: 100vh;        /* full viewport height */
   background: #f7f7f7;
   border-right: 1px solid #ddd;
@@ -66,8 +66,8 @@ body {
    -------------------------------------------------- */
 
 .feeds {
-  margin-left: 40px;        /* space for sidebar */
-  padding: 0.5rem;
+  margin-left: 80px;        /* space for sidebar */
+  padding: 1rem;
   width: calc(100% - 80px); /* fill remaining width */
   display: grid;            /* responsive grid layout */
   gap: 2rem;
