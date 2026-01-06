@@ -1,45 +1,61 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>My Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeds</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<div class="feeds">
+<body>
 
-  <div class="fb-page"
-       data-href="https://www.facebook.com/Florianpoirotpatisserie"
-       data-tabs="timeline"
-       data-width=""
-       data-height="700"
-       data-small-header="false"
-       data-hide-cover="false"
-       data-show-facepile="false">
-  </div>
+  <!-- Fixed left nav -->
+<nav class="side-nav">
+  <a href="#feed1" class="nav-item">
+    <img src="images/florian.jpg" alt="Florian Poirot">
+  </a>
+  <a href="#feed2" class="nav-item">
+    <img src="images/pat_malton.jpg" alt="Patisserie Malton">
+  </a>
+  <a href="#feed3" class="nav-item">
+    <img src="images/spud_shack.jpg" alt="Third Feed">
+  </a>
+</nav>
 
-  <div class="fb-page"
-       data-href="https://www.facebook.com/patisseriemalton"
-       data-tabs="timeline"
-       data-width=""
-       data-height="700"
-       data-small-header="false"
-       data-hide-cover="false"
-       data-show-facepile="false">
-  </div>
 
-  <div class="fb-page"
-       data-href="https://www.facebook.com/profile.php?id=61579640825096"
-       data-tabs="timeline"
-       data-width=""
-       data-height="700"
-       data-small-header="false"
-       data-hide-cover="false"
-       data-show-facepile="false">
-  </div>
+  <!-- Main content -->
+  <main class="feeds">
 
-</div>
+    <section id="feed1" class="feed">
+      <h2>Florian Poirot</h2>
+      <div class="fb-page"
+           data-href="https://www.facebook.com/Florianpoirotpatisserie"
+           data-tabs="timeline"
+           data-height="700">
+      </div>
+    </section>
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
-</script>
+    <section id="feed2" class="feed">
+      <h2>Patisserie Malton</h2>
+      <div class="fb-page"
+           data-href="https://www.facebook.com/patisseriemalton"
+           data-tabs="timeline"
+           data-height="700">
+      </div>
+    </section>
+
+    <section id="feed3" class="feed">
+      <h2>Third Feed</h2>
+      <div class="fb-page"
+           data-href="https://www.facebook.com/profile.php?id=61579640825096"
+           data-tabs="timeline"
+           data-height="700">
+      </div>
+    </section>
+
+  </main>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
+  </script>
+
+</body>

@@ -1,3 +1,78 @@
+/* Layout */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+}
+
+/* Fixed left nav */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background: #f7f7f7;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+/* Nav buttons */
+.nav-item {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  transition: background 0.2s;
+}
+
+.nav-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+
+.nav-item:hover {
+  background: #eee;
+}
+
+/* Main content area */
+.feeds {
+  margin-left: 80px; /* space for the sidebar */
+  padding: 1rem;
+  width: calc(100% - 80px);
+  scroll-behavior: smooth;
+}
+
+/* Feed sections */
+.feed {
+  margin-bottom: 3rem;
+}
+
+.feed h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Make FB embeds responsive */
+.fb-page,
+.fb-page iframe {
+  width: 100% !important;
+}
+
 .feeds {
   display: grid;
   gap: 2rem;
